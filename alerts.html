@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pollution Alerts | LakeGuard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                Lake<span>Guard</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="alerts.html" class="active">Alerts</a>
+                <a href="about.html">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Simulation Notice -->
+    <div class="simulation-notice">
+        DEMONSTRATION PROJECT: All readings and alerts are simulated.
+        No real sensors or lakes are connected.
+    </div>
+
+
+    <main class="container page-content">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+
+            <div>
+                <p class="eyebrow">POLLUTION NOTIFICATIONS</p>
+
+                <h1>Alerts and Notifications</h1>
+
+                <p>
+                    Explore example alerts that demonstrate how unusual
+                    water-quality readings could be highlighted.
+                </p>
+            </div>
+
+            <button type="button" class="btn btn-primary"
+                    id="generateAlertButton">
+                Generate Demo Alert
+            </button>
+
+        </section>
+
+
+        <!-- Alert Summary -->
+        <section class="summary-grid">
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Total Alerts</span>
+                    <span class="metric-icon">🔔</span>
+                </div>
+
+                <h2 id="totalAlerts">3</h2>
+
+                <p>Example notifications displayed</p>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">High Priority</span>
+                    <span class="metric-icon">🚨</span>
+                </div>
+
+                <h2 id="highAlerts">1</h2>
+
+                <p>Illustrative high-priority cases</p>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Medium Priority</span>
+                    <span class="metric-icon">⚠️</span>
+                </div>
+
+                <h2 id="mediumAlerts">1</h2>
+
+                <p>Illustrative medium-priority cases</p>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Information</span>
+                    <span class="metric-icon">ℹ️</span>
+                </div>
+
+                <h2 id="infoAlerts">1</h2>
+
+                <p>Example informational messages</p>
+            </article>
+
+        </section>
+
+
+        <!-- Alert Filter -->
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="eyebrow">ALERT MANAGEMENT</p>
+                    <h2>Demonstration Alert Centre</h2>
+                </div>
+
+                <span class="demo-badge">● Demo Mode</span>
+
+            </div>
+
+            <p>
+                Use the filter to view example notifications by category.
+                These notifications are created for demonstration only.
+            </p>
+
+            <div class="filter-bar">
+
+                <label for="alertFilter">Filter alerts:</label>
+
+                <select id="alertFilter">
+                    <option value="all">All Alerts</option>
+                    <option value="high">High Priority</option>
+                    <option value="medium">Medium Priority</option>
+                    <option value="info">Information</option>
+                </select>
+
+            </div>
+
+
+            <!-- Alert List -->
+            <div class="alert-list" id="alertList">
+
+                <article class="alert-card alert-high"
+                         data-level="high">
+
+                    <div class="alert-symbol">🚨</div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-title-row">
+                            <h3>Low Dissolved Oxygen — Example</h3>
+                            <span class="priority-badge priority-high">
+                                High Priority
+                            </span>
+                        </div>
+
+                        <p>
+                            Demonstration scenario: a simulated dissolved
+                            oxygen reading falls below the example threshold.
+                            Further investigation would be needed in a real lake.
+                        </p>
+
+                        <span class="alert-time">
+                            Sample notification · Demonstration only
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="alert-card alert-medium"
+                         data-level="medium">
+
+                    <div class="alert-symbol">⚠️</div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-title-row">
+                            <h3>Increased Turbidity — Example</h3>
+                            <span class="priority-badge priority-medium">
+                                Medium Priority
+                            </span>
+                        </div>
+
+                        <p>
+                            Demonstration scenario: a simulated turbidity
+                            reading rises above the example threshold,
+                            suggesting that the reading should be reviewed.
+                        </p>
+
+                        <span class="alert-time">
+                            Sample notification · Demonstration only
+                        </span>
+
+                    </div>
+
+                </article>
+
+
+                <article class="alert-card alert-info"
+                         data-level="info">
+
+                    <div class="alert-symbol">ℹ️</div>
+
+                    <div class="alert-content">
+
+                        <div class="alert-title-row">
+                            <h3>Monitoring Overview — Example</h3>
+                            <span class="priority-badge priority-info">
+                                Information
+                            </span>
+                        </div>
+
+                        <p>
+                            This is an informational message showing how
+                            a monitoring website could communicate the
+                            status of sample readings to its users.
+                        </p>
+
+                        <span class="alert-time">
+                            Sample notification · Demonstration only
+                        </span>
+
+                    </div>
+
+                </article>
+
+            </div>
+
+
+            <p class="empty-state" id="emptyAlertMessage" hidden>
+                No alerts match the selected category.
+            </p>
+
+        </section>
+
+
+        <!-- Alert Process -->
+        <section class="section">
+
+            <div class="section-heading">
+                <p class="eyebrow">HOW ALERTS WORK</p>
+
+                <h2>Alert Generation Process</h2>
+
+                <p>
+                    A real monitoring system would require reliable
+                    measurements and suitable rules before issuing alerts.
+                </p>
+            </div>
+
+
+            <div class="process-grid">
+
+                <article class="process-card">
+                    <span class="process-number">01</span>
+                    <h3>Collect Data</h3>
+                    <p>
+                        Obtain water-quality measurements from suitable
+                        sensors or validated sampling procedures.
+                    </p>
+                </article>
+
+
+                <article class="process-card">
+                    <span class="process-number">02</span>
+                    <h3>Check Thresholds</h3>
+                    <p>
+                        Compare validated measurements with relevant
+                        environmental criteria.
+                    </p>
+                </article>
+
+
+                <article class="process-card">
+                    <span class="process-number">03</span>
+                    <h3>Display Alert</h3>
+                    <p>
+                        Show an appropriate notification and recommend
+                        further investigation when necessary.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <section class="notice-card">
+
+            <h3>Important Disclaimer</h3>
+
+            <p>
+                All alerts on this page are fictional demonstration
+                messages. No real sensors or lakes are connected, and
+                no notifications are sent to any authority. Alert labels
+                and thresholds are illustrative and must not be used
+                to make actual environmental or public-health decisions.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <a href="index.html" class="logo footer-logo">
+                    Lake<span>Guard</span>
+                </a>
+
+                <p>
+                    A student demonstration project for lake pollution
+                    monitoring and environmental awareness.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="about.html">About</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 LakeGuard | Educational Demonstration Project
+            </p>
+
+            <p>
+                All readings are simulated. No real sensors or lakes are connected.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

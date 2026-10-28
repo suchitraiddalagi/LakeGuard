@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard | LakeGuard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                Lake<span>Guard</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html" class="active">Dashboard</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="about.html">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <!-- Simulation Notice -->
+    <div class="simulation-notice">
+        DEMONSTRATION PROJECT: All readings are simulated.
+        No real sensors or lakes are connected.
+    </div>
+
+
+    <main class="container page-content">
+
+        <!-- Page Heading -->
+        <section class="page-heading">
+
+            <div>
+                <p class="eyebrow">MONITORING OVERVIEW</p>
+                <h1>Water Quality Dashboard</h1>
+
+                <p>
+                    Explore sample water-quality readings and their
+                    illustrative status indicators.
+                </p>
+            </div>
+
+            <div class="dashboard-actions">
+                <span class="demo-badge">● Demo Mode</span>
+
+                <button type="button" class="btn btn-primary"
+                        id="refreshReadings">
+                    Generate New Readings
+                </button>
+            </div>
+
+        </section>
+
+
+        <!-- Summary Cards -->
+        <section class="summary-grid">
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">pH Level</span>
+                    <span class="metric-icon">🧪</span>
+                </div>
+
+                <h2 id="phValue">7.2</h2>
+
+                <p>Illustrative range: 6.5–8.5</p>
+
+                <span class="status-badge status-good" id="phStatus">
+                    Within Example Range
+                </span>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Turbidity</span>
+                    <span class="metric-icon">🌫️</span>
+                </div>
+
+                <h2>
+                    <span id="turbidityValue">4.0</span>
+                    <small>NTU</small>
+                </h2>
+
+                <p>Lower values generally indicate clearer water.</p>
+
+                <span class="status-badge status-good" id="turbidityStatus">
+                    Lower Turbidity
+                </span>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Dissolved Oxygen</span>
+                    <span class="metric-icon">🐟</span>
+                </div>
+
+                <h2>
+                    <span id="oxygenValue">7.0</span>
+                    <small>mg/L</small>
+                </h2>
+
+                <p>Oxygen available in the water.</p>
+
+                <span class="status-badge status-good" id="oxygenStatus">
+                    Example Adequate Level
+                </span>
+            </article>
+
+
+            <article class="metric-card">
+                <div class="metric-top">
+                    <span class="metric-label">Water Temperature</span>
+                    <span class="metric-icon">🌡️</span>
+                </div>
+
+                <h2>
+                    <span id="temperatureValue">25.0</span>
+                    <small>°C</small>
+                </h2>
+
+                <p>Illustrative temperature reading.</p>
+
+                <span class="status-badge status-good" id="temperatureStatus">
+                    Example Reference
+                </span>
+            </article>
+
+        </section>
+
+
+        <!-- Water Quality Summary -->
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">DEMONSTRATION SUMMARY</p>
+                    <h2>Pollution Risk Overview</h2>
+                </div>
+
+                <span class="status-badge status-good" id="overallStatus">
+                    Lower Indicated Risk
+                </span>
+            </div>
+
+            <p id="riskDescription">
+                The current simulated readings do not cross the example
+                warning thresholds used by this demonstration.
+            </p>
+
+            <div class="risk-meter">
+                <div class="risk-meter-fill" id="riskMeterFill"></div>
+            </div>
+
+            <div class="risk-scale">
+                <span>Lower indicated risk</span>
+                <span>Higher indicated risk</span>
+            </div>
+
+            <p class="small-note">
+                This indicator is an illustrative calculation based on
+                simulated values. It is not a scientific assessment of
+                any actual lake.
+            </p>
+
+        </section>
+
+
+        <!-- Reading Information -->
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+                <div>
+                    <p class="eyebrow">READING DETAILS</p>
+                    <h2>Understanding the Parameters</h2>
+                </div>
+            </div>
+
+            <div class="reading-table-wrapper">
+
+                <table class="data-table">
+
+                    <thead>
+                        <tr>
+                            <th>Parameter</th>
+                            <th>Current Reading</th>
+                            <th>Unit</th>
+                            <th>Interpretation</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>pH</td>
+                            <td id="tablePh">7.2</td>
+                            <td>pH scale</td>
+                            <td id="tablePhStatus">Within example range</td>
+                        </tr>
+
+                        <tr>
+                            <td>Turbidity</td>
+                            <td id="tableTurbidity">4.0</td>
+                            <td>NTU</td>
+                            <td id="tableTurbidityStatus">Lower turbidity</td>
+                        </tr>
+
+                        <tr>
+                            <td>Dissolved Oxygen</td>
+                            <td id="tableOxygen">7.0</td>
+                            <td>mg/L</td>
+                            <td id="tableOxygenStatus">Example adequate level</td>
+                        </tr>
+
+                        <tr>
+                            <td>Water Temperature</td>
+                            <td id="tableTemperature">25.0</td>
+                            <td>°C</td>
+                            <td id="tableTemperatureStatus">Example reference</td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <section class="notice-card">
+
+            <h3>Important Information</h3>
+
+            <p>
+                This dashboard uses simulated readings generated by
+                JavaScript. The values are intended only to demonstrate
+                how a water-quality monitoring interface might work.
+                They do not represent measurements from a real lake,
+                and the risk indicator must not be used for environmental
+                or public-health decisions.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <!-- Footer -->
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <a href="index.html" class="logo footer-logo">
+                    Lake<span>Guard</span>
+                </a>
+
+                <p>
+                    A student demonstration project for lake pollution
+                    monitoring and environmental awareness.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="analysis.html">Analysis</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="about.html">About</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 LakeGuard | Educational Demonstration Project
+            </p>
+
+            <p>
+                All readings are simulated. No real sensors or lakes are connected.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>

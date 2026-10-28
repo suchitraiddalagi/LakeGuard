@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Pollution Analysis | LakeGuard</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+
+            <a href="index.html" class="logo">
+                Lake<span>Guard</span>
+            </a>
+
+            <nav class="navbar">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="analysis.html" class="active">Analysis</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="about.html">About</a>
+            </nav>
+
+        </div>
+    </header>
+
+
+    <div class="simulation-notice">
+        DEMONSTRATION PROJECT: All readings are simulated.
+        No real sensors or lakes are connected.
+    </div>
+
+
+    <main class="container page-content">
+
+        <section class="page-heading">
+            <div>
+                <p class="eyebrow">DATA INTERPRETATION</p>
+
+                <h1>Water Quality Analysis</h1>
+
+                <p>
+                    Understand the meaning of water-quality indicators,
+                    their possible implications, and the importance of
+                    preventing lake pollution.
+                </p>
+            </div>
+
+            <span class="demo-badge">● Simulated Data</span>
+        </section>
+
+
+        <!-- Analysis Overview -->
+        <section class="analysis-intro dashboard-panel">
+
+            <p class="eyebrow">ANALYSIS OVERVIEW</p>
+
+            <h2>Understanding the Indicators</h2>
+
+            <p>
+                Water quality is influenced by several physical and
+                chemical characteristics. This demonstration presents
+                four indicators and explains how unusual readings may
+                require further investigation.
+            </p>
+
+            <p>
+                A single parameter cannot determine whether an entire
+                lake is polluted. Proper assessment requires suitable
+                sampling, multiple measurements, and comparison with
+                applicable environmental standards.
+            </p>
+
+        </section>
+
+
+        <!-- Parameter Analysis -->
+        <section class="section">
+
+            <div class="section-heading">
+                <p class="eyebrow">PARAMETER-WISE ANALYSIS</p>
+
+                <h2>What Do the Readings Tell Us?</h2>
+
+                <p>
+                    These explanations describe general relationships,
+                    not a scientific assessment of an actual lake.
+                </p>
+            </div>
+
+
+            <div class="analysis-grid">
+
+                <article class="analysis-card">
+
+                    <div class="analysis-card-header">
+                        <span class="parameter-icon">🧪</span>
+                        <span class="analysis-label">Chemical Indicator</span>
+                    </div>
+
+                    <h3>pH Level</h3>
+
+                    <p>
+                        pH indicates how acidic or alkaline the water is.
+                        Significant deviations from a suitable range can
+                        affect aquatic organisms and may indicate a need
+                        for further investigation.
+                    </p>
+
+                    <div class="example-range">
+                        <strong>Illustrative reference:</strong>
+                        <span>pH 6.5–8.5</span>
+                    </div>
+
+                    <p class="small-note">
+                        This example range is for demonstration only.
+                        Applicable criteria depend on the intended water use
+                        and relevant environmental standards.
+                    </p>
+
+                </article>
+
+
+                <article class="analysis-card">
+
+                    <div class="analysis-card-header">
+                        <span class="parameter-icon">🌫️</span>
+                        <span class="analysis-label">Physical Indicator</span>
+                    </div>
+
+                    <h3>Turbidity</h3>
+
+                    <p>
+                        Turbidity describes the cloudiness of water caused
+                        by suspended particles. High turbidity can reduce
+                        light penetration and may be associated with soil
+                        runoff, sediment, or other material.
+                    </p>
+
+                    <div class="example-range">
+                        <strong>Measurement unit:</strong>
+                        <span>NTU</span>
+                    </div>
+
+                    <p class="small-note">
+                        Turbidity alone does not identify the source of
+                        contamination or establish whether water is safe.
+                    </p>
+
+                </article>
+
+
+                <article class="analysis-card">
+
+                    <div class="analysis-card-header">
+                        <span class="parameter-icon">🐟</span>
+                        <span class="analysis-label">Oxygen Indicator</span>
+                    </div>
+
+                    <h3>Dissolved Oxygen</h3>
+
+                    <p>
+                        Dissolved oxygen is important for fish and other
+                        aquatic organisms. Low oxygen levels can occur
+                        when decomposition and other processes consume
+                        oxygen faster than it is replenished.
+                    </p>
+
+                    <div class="example-range">
+                        <strong>Measurement unit:</strong>
+                        <span>mg/L</span>
+                    </div>
+
+                    <p class="small-note">
+                        Interpretation depends on factors such as water
+                        temperature, aquatic species, and local conditions.
+                    </p>
+
+                </article>
+
+
+                <article class="analysis-card">
+
+                    <div class="analysis-card-header">
+                        <span class="parameter-icon">🌡️</span>
+                        <span class="analysis-label">Physical Indicator</span>
+                    </div>
+
+                    <h3>Water Temperature</h3>
+
+                    <p>
+                        Water temperature influences aquatic life and the
+                        amount of oxygen that water can hold. Sudden or
+                        unusual temperature changes may affect the balance
+                        of a lake ecosystem.
+                    </p>
+
+                    <div class="example-range">
+                        <strong>Measurement unit:</strong>
+                        <span>°C</span>
+                    </div>
+
+                    <p class="small-note">
+                        A suitable temperature varies with location,
+                        season, depth, and the organisms present.
+                    </p>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Chart -->
+        <section class="dashboard-panel">
+
+            <div class="panel-heading">
+
+                <div>
+                    <p class="eyebrow">VISUAL REPRESENTATION</p>
+                    <h2>Example Parameter Readings</h2>
+                </div>
+
+                <span class="demo-badge">Demo Values</span>
+
+            </div>
+
+            <p>
+                The chart below compares example values with illustrative
+                reference points. Since the parameters use different units
+                and scales, the chart uses a normalized display from 0 to 100.
+            </p>
+
+            <div class="chart-container">
+
+                <div class="chart-row">
+                    <div class="chart-label">
+                        <span>pH</span>
+                        <strong id="analysisPhText">7.2</strong>
+                    </div>
+
+                    <div class="chart-track">
+                        <div class="chart-bar chart-ph" id="analysisPhBar"
+                             style="width: 72%;"></div>
+                    </div>
+                </div>
+
+
+                <div class="chart-row">
+                    <div class="chart-label">
+                        <span>Turbidity</span>
+                        <strong id="analysisTurbidityText">4.0 NTU</strong>
+                    </div>
+
+                    <div class="chart-track">
+                        <div class="chart-bar chart-turbidity"
+                             id="analysisTurbidityBar"
+                             style="width: 20%;"></div>
+                    </div>
+                </div>
+
+
+                <div class="chart-row">
+                    <div class="chart-label">
+                        <span>Dissolved Oxygen</span>
+                        <strong id="analysisOxygenText">7.0 mg/L</strong>
+                    </div>
+
+                    <div class="chart-track">
+                        <div class="chart-bar chart-oxygen"
+                             id="analysisOxygenBar"
+                             style="width: 70%;"></div>
+                    </div>
+                </div>
+
+
+                <div class="chart-row">
+                    <div class="chart-label">
+                        <span>Temperature</span>
+                        <strong id="analysisTemperatureText">25.0 °C</strong>
+                    </div>
+
+                    <div class="chart-track">
+                        <div class="chart-bar chart-temperature"
+                             id="analysisTemperatureBar"
+                             style="width: 50%;"></div>
+                    </div>
+                </div>
+
+            </div>
+
+            <p class="small-note">
+                These bar lengths are illustrative display values, not
+                a direct comparison of pollution severity. The units
+                and scales differ between parameters.
+            </p>
+
+        </section>
+
+
+        <!-- Causes of Pollution -->
+        <section class="section">
+
+            <div class="section-heading">
+                <p class="eyebrow">ENVIRONMENTAL AWARENESS</p>
+
+                <h2>Common Causes of Lake Pollution</h2>
+
+                <p>
+                    Understanding potential sources of pollution helps
+                    communities plan suitable prevention measures.
+                </p>
+            </div>
+
+
+            <div class="cause-grid">
+
+                <article class="cause-card">
+                    <div class="parameter-icon">🏭</div>
+
+                    <h3>Industrial Discharge</h3>
+
+                    <p>
+                        Inadequately treated industrial wastewater may
+                        introduce harmful substances into water bodies.
+                    </p>
+                </article>
+
+
+                <article class="cause-card">
+                    <div class="parameter-icon">🏘️</div>
+
+                    <h3>Untreated Sewage</h3>
+
+                    <p>
+                        Wastewater from homes and settlements can introduce
+                        organic matter, nutrients, and microorganisms.
+                    </p>
+                </article>
+
+
+                <article class="cause-card">
+                    <div class="parameter-icon">🌾</div>
+
+                    <h3>Agricultural Runoff</h3>
+
+                    <p>
+                        Rainwater can carry soil, fertilizers, and pesticides
+                        from surrounding land into lakes.
+                    </p>
+                </article>
+
+
+                <article class="cause-card">
+                    <div class="parameter-icon">🗑️</div>
+
+                    <h3>Solid Waste</h3>
+
+                    <p>
+                        Plastic, discarded materials, and other litter can
+                        damage habitats and reduce environmental quality.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- Recommendations -->
+        <section class="recommendation-panel">
+
+            <p class="eyebrow">RECOMMENDED ACTIONS</p>
+
+            <h2>How Can We Help Protect Lakes?</h2>
+
+            <ul class="recommendation-list">
+
+                <li>Prevent untreated wastewater from entering lakes.</li>
+
+                <li>Dispose of household and industrial waste responsibly.</li>
+
+                <li>Reduce unnecessary fertilizer and pesticide runoff.</li>
+
+                <li>Conduct regular water-quality testing using appropriate methods.</li>
+
+                <li>Support lake clean-up drives and public awareness campaigns.</li>
+
+                <li>Report suspected pollution to the relevant local authorities.</li>
+
+            </ul>
+
+        </section>
+
+
+        <!-- Disclaimer -->
+        <section class="notice-card">
+
+            <h3>Data and Interpretation Disclaimer</h3>
+
+            <p>
+                All values and chart representations on this page are
+                simulated for educational demonstration. No real sensors
+                or lakes are connected. The displayed values do not represent
+                laboratory results or measurements from an actual water body.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer class="site-footer">
+
+        <div class="container footer-content">
+
+            <div>
+                <a href="index.html" class="logo footer-logo">
+                    Lake<span>Guard</span>
+                </a>
+
+                <p>
+                    A student demonstration project for lake pollution
+                    monitoring and environmental awareness.
+                </p>
+            </div>
+
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="alerts.html">Alerts</a>
+                <a href="about.html">About</a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>
+                &copy; 2026 LakeGuard | Educational Demonstration Project
+            </p>
+
+            <p>
+                All readings are simulated. No real sensors or lakes are connected.
+            </p>
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
+

@@ -1,0 +1,1358 @@
+
+/* ==========================================
+   LAKEGUARD - COMPLETE WEBSITE STYLESHEET
+   Compatible with all five HTML pages
+========================================== */
+
+/* 1. GLOBAL SETTINGS */
+
+:root {
+    --primary: #087f8c;
+    --primary-dark: #075b66;
+    --primary-light: #e4f7f7;
+    --secondary: #16a085;
+
+    --background: #f4f8fb;
+    --surface: #ffffff;
+
+    --text: #18313f;
+    --muted: #647986;
+    --border: #e0e9ee;
+
+    --success: #198754;
+    --warning: #d97706;
+    --danger: #dc3545;
+
+    --shadow: 0 8px 25px rgba(20, 65, 80, 0.07);
+    --radius: 16px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.7;
+    min-height: 100vh;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+button:focus-visible,
+a:focus-visible,
+select:focus-visible {
+    outline: 3px solid #5ac8d1;
+    outline-offset: 3px;
+}
+
+p {
+    color: var(--muted);
+}
+
+h1,
+h2,
+h3 {
+    line-height: 1.3;
+}
+
+.container {
+    width: min(1150px, 92%);
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.page-content {
+    padding-top: 45px;
+    padding-bottom: 70px;
+}
+
+.section {
+    margin-top: 65px;
+}
+
+.eyebrow {
+    color: var(--primary);
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.section-heading {
+    max-width: 720px;
+    margin: 0 auto 30px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    font-size: clamp(1.7rem, 3vw, 2.3rem);
+    margin-bottom: 12px;
+}
+
+.section-heading > p:last-child {
+    margin-top: 10px;
+}
+
+
+/* 2. HEADER AND NAVIGATION */
+
+.site-header {
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+    position: relative;
+    z-index: 10;
+}
+
+.header-content {
+    min-height: 78px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.logo {
+    font-size: 1.7rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+    color: var(--text);
+    white-space: nowrap;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    color: var(--muted);
+    font-size: 0.93rem;
+    font-weight: 600;
+    padding: 9px 13px;
+    border-radius: 9px;
+    transition: 0.2s ease;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary);
+    background: var(--primary-light);
+}
+
+
+/* 3. SIMULATION NOTICE */
+
+.simulation-notice {
+    background: #fff3cd;
+    color: #775600;
+    border-bottom: 1px solid #f3df9b;
+    padding: 11px 4%;
+    text-align: center;
+    font-size: 0.84rem;
+    font-weight: 700;
+}
+
+
+/* 4. BUTTONS */
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 12px 21px;
+    font-weight: 700;
+    font-size: 0.94rem;
+    transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+}
+
+.btn-secondary {
+    background: #ffffff;
+    color: var(--primary);
+    border-color: #c7e8e8;
+}
+
+.btn-secondary:hover {
+    background: var(--primary-light);
+}
+
+.btn-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    background: #ffffff;
+    color: #075b66;
+    border: 2px solid #ffffff;
+    border-radius: 10px;
+    padding: 12px 21px;
+    font-weight: 700;
+    font-size: 15px;
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+.btn-light:hover {
+    background: var(--primary-light);
+}
+
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+
+/* 5. HOMEPAGE HERO LAYOUT */
+
+.hero {
+    background: var(--background);
+    padding: 65px 0;
+}
+
+.hero > .container.hero-content {
+    width: min(1150px, 92%);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+    align-items: center;
+    gap: 45px;
+}
+
+.hero-text {
+    min-width: 0;
+}
+
+.hero-text h1 {
+    font-size: clamp(2.3rem, 4vw, 3.5rem);
+    line-height: 1.2;
+    letter-spacing: -1.5px;
+    margin: 15px 0 22px;
+}
+
+.hero-text h1 span {
+    color: var(--primary);
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+.hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.hero-buttons .btn {
+    min-height: 48px;
+    white-space: nowrap;
+}
+
+
+/* 6. HOMEPAGE GREEN VISUAL PANEL */
+
+.hero-visual {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 350px;
+    padding: 35px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #087f8c, #16a085);
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    isolation: isolate;
+}
+
+.hero-visual::before,
+.hero-visual::after {
+    content: "";
+    position: absolute;
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.hero-visual::before {
+    width: 230px;
+    height: 230px;
+    top: -80px;
+    right: -50px;
+}
+
+.hero-visual::after {
+    width: 170px;
+    height: 170px;
+    bottom: -75px;
+    left: -45px;
+}
+
+
+/* Central water illustration */
+
+.water-circle {
+    width: 190px;
+    min-height: 190px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.13);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.water-icon {
+    font-size: 2.8rem;
+    line-height: 1.2;
+    margin-bottom: 8px;
+}
+
+.water-circle h2 {
+    font-size: 1.2rem;
+    line-height: 1.3;
+    margin-bottom: 5px;
+    color: #ffffff;
+}
+
+.water-circle p {
+    color: #e4ffff;
+    font-size: 0.85rem;
+    line-height: 1.5;
+}
+
+
+/* Floating information cards */
+
+.floating-card {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 13px 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+    z-index: 2;
+}
+
+.floating-card > span {
+    font-size: 1.5rem;
+}
+
+.floating-card strong,
+.floating-card small {
+    display: block;
+    line-height: 1.5;
+}
+
+.floating-card strong {
+    color: var(--text);
+    font-size: 0.82rem;
+}
+
+.floating-card small {
+    color: var(--muted);
+    font-size: 0.74rem;
+}
+
+.floating-card-one {
+    top: 25px;
+    left: 18px;
+}
+
+.floating-card-two {
+    right: 18px;
+    bottom: 25px;
+}
+
+
+/* 7. HOMEPAGE FEATURE CARDS */
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 22px;
+}
+
+.feature-card {
+    background: var(--surface);
+    padding: 27px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-4px);
+}
+
+.feature-icon {
+    width: 52px;
+    height: 52px;
+    display: grid;
+    place-items: center;
+    border-radius: 14px;
+    background: var(--primary-light);
+    font-size: 1.65rem;
+    margin-bottom: 19px;
+}
+
+.feature-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.15rem;
+}
+
+
+/* 8. WATER QUALITY PARAMETERS */
+
+.parameters-section {
+    padding: 65px 0;
+    background: #ffffff;
+    margin-top: 15px;
+}
+
+.parameter-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.parameter-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 24px;
+    text-align: center;
+    box-shadow: var(--shadow);
+}
+
+.parameter-icon {
+    width: 58px;
+    height: 58px;
+    display: grid;
+    place-items: center;
+    margin: 0 auto 14px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    font-size: 1.5rem;
+}
+
+.parameter-card h3 {
+    margin-bottom: 8px;
+}
+
+.parameter-symbol {
+    display: inline-grid;
+    place-items: center;
+    width: 58px;
+    height: 58px;
+    border-radius: 50%;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.15rem;
+    font-weight: 800;
+    margin-bottom: 14px;
+}
+
+
+/* 9. CALL-TO-ACTION SECTION */
+
+.cta-section {
+    background: linear-gradient(130deg, #075b66, #087f8c);
+    color: #ffffff;
+    padding: 40px;
+    margin-top: 65px;
+    margin-bottom: 65px;
+    border-radius: 22px;
+}
+
+.cta-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.cta-content > div {
+    max-width: 700px;
+}
+
+.cta-content h2 {
+    font-size: clamp(1.6rem, 3vw, 2.2rem);
+    margin-bottom: 12px;
+}
+
+.cta-content .eyebrow {
+    color: #b6f1ec;
+}
+
+.cta-content p:not(.eyebrow) {
+    color: #e4ffff;
+    margin-bottom: 0;
+}
+
+
+/* 10. OTHER PAGE HEADINGS */
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    margin-bottom: 35px;
+}
+
+.page-heading h1 {
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    letter-spacing: -0.7px;
+    margin-bottom: 13px;
+}
+
+.page-heading p:not(.eyebrow) {
+    max-width: 750px;
+}
+
+.page-heading > .btn {
+    flex-shrink: 0;
+}
+
+
+/* 11. DASHBOARD SUMMARY CARDS */
+
+.summary-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+    margin-bottom: 30px;
+}
+
+.metric-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 23px;
+    box-shadow: var(--shadow);
+    min-width: 0;
+}
+
+.metric-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.metric-label {
+    font-size: 0.9rem;
+    color: var(--muted);
+    font-weight: 700;
+}
+
+.metric-icon {
+    font-size: 1.4rem;
+}
+
+.metric-card h2 {
+    font-size: 2.1rem;
+    margin: 14px 0 5px;
+    overflow-wrap: anywhere;
+}
+
+.metric-unit {
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.metric-card p {
+    font-size: 0.83rem;
+}
+
+
+/* 12. STATUS BADGES */
+
+.status-badge,
+.priority-badge,
+.demo-badge {
+    display: inline-block;
+    border-radius: 50px;
+    padding: 5px 10px;
+    font-size: 0.76rem;
+    font-weight: 800;
+}
+
+.status-good {
+    background: #d9f5e4;
+    color: #146c43;
+}
+
+.status-warning {
+    background: #fff0cf;
+    color: #895600;
+}
+
+.status-danger {
+    background: #fde1e3;
+    color: #b42332;
+}
+
+.status-neutral {
+    background: #e8eef2;
+    color: #4d6270;
+}
+
+
+/* 13. DASHBOARD PANELS */
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 23px;
+    margin-top: 25px;
+}
+
+.dashboard-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 27px;
+    margin-bottom: 25px;
+    box-shadow: var(--shadow);
+    min-width: 0;
+}
+
+.dashboard-panel h2 {
+    font-size: 1.35rem;
+    margin-bottom: 9px;
+}
+
+.panel-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 18px;
+}
+
+.panel-heading h2 {
+    margin-bottom: 0;
+}
+
+.panel-heading p {
+    font-size: 0.9rem;
+}
+
+.demo-badge {
+    color: var(--primary-dark);
+    background: var(--primary-light);
+    white-space: nowrap;
+}
+
+.risk-summary {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 22px 0;
+}
+
+.risk-indicator {
+    flex-shrink: 0;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-size: 1.5rem;
+}
+
+.risk-summary h3 {
+    margin-bottom: 5px;
+}
+
+.risk-meter {
+    height: 11px;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 50px;
+    background: #e7edf1;
+    margin-top: 18px;
+}
+
+.risk-meter-fill {
+    height: 100%;
+    width: 25%;
+    border-radius: inherit;
+    background: var(--secondary);
+    transition: width 0.3s ease, background 0.3s ease;
+}
+
+.panel-note {
+    margin-top: 16px;
+    font-size: 0.83rem;
+}
+
+
+/* 14. DATA TABLES */
+
+.table-wrapper {
+    width: 100%;
+    overflow-x: auto;
+    margin-top: 20px;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 540px;
+    text-align: left;
+}
+
+.data-table th,
+.data-table td {
+    padding: 14px 16px;
+    border-bottom: 1px solid var(--border);
+}
+
+.data-table th {
+    background: #f0f7f9;
+    color: var(--text);
+    font-size: 0.85rem;
+}
+
+.data-table td {
+    font-size: 0.9rem;
+}
+
+.data-table tbody tr:hover {
+    background: #f7fbfc;
+}
+
+
+/* 15. ANALYSIS CHARTS */
+
+.chart-list {
+    display: grid;
+    gap: 24px;
+    margin-top: 25px;
+}
+
+.chart-item {
+    display: grid;
+    gap: 9px;
+}
+
+.chart-label-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+}
+
+.chart-label-row h3 {
+    font-size: 0.98rem;
+}
+
+.chart-track {
+    width: 100%;
+    height: 13px;
+    background: #e9f0f3;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+.chart-bar {
+    height: 100%;
+    width: 50%;
+    background: linear-gradient(90deg, #087f8c, #16a085);
+    border-radius: inherit;
+    transition: width 0.3s ease;
+}
+
+.chart-caption {
+    font-size: 0.82rem;
+}
+
+
+/* 16. ALERT CENTRE */
+
+.filter-bar {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 25px 0;
+}
+
+.filter-bar label {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.filter-bar select {
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    padding: 10px 13px;
+    color: var(--text);
+}
+
+.alert-list {
+    display: grid;
+    gap: 17px;
+    margin-top: 22px;
+}
+
+.alert-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    background: #ffffff;
+    border: 1px solid var(--border);
+    border-left: 5px solid #9aaab3;
+    border-radius: 12px;
+    padding: 22px;
+}
+
+.alert-high {
+    border-left-color: var(--danger);
+}
+
+.alert-medium {
+    border-left-color: var(--warning);
+}
+
+.alert-info {
+    border-left-color: var(--primary);
+}
+
+.alert-symbol {
+    font-size: 1.7rem;
+    flex-shrink: 0;
+}
+
+.alert-content {
+    flex: 1;
+    min-width: 0;
+}
+
+.alert-title-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 9px;
+}
+
+.alert-title-row h3 {
+    font-size: 1.05rem;
+}
+
+.priority-high {
+    background: #fde1e3;
+    color: #b42332;
+}
+
+.priority-medium {
+    background: #fff0cf;
+    color: #895600;
+}
+
+.priority-info {
+    background: var(--primary-light);
+    color: var(--primary-dark);
+}
+
+.alert-time {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+.empty-state {
+    padding: 25px;
+    text-align: center;
+    background: #f5f9fb;
+    border-radius: 12px;
+}
+
+
+/* 17. WORKFLOW CARDS */
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.process-card {
+    padding: 25px;
+    border: 1px solid var(--border);
+    background: var(--surface);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.process-number {
+    display: inline-grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: var(--primary-light);
+    color: var(--primary);
+    font-weight: 800;
+    margin-bottom: 17px;
+}
+
+.process-card h3 {
+    margin-bottom: 10px;
+}
+
+
+/* 18. ABOUT PAGE */
+
+.about-intro {
+    display: grid;
+    grid-template-columns: 1.25fr 0.75fr;
+    align-items: center;
+    gap: 35px;
+    margin: 35px 0 60px;
+}
+
+.about-text h2 {
+    font-size: clamp(1.7rem, 3vw, 2.2rem);
+    margin-bottom: 17px;
+}
+
+.about-text p {
+    margin-bottom: 14px;
+}
+
+.about-highlight {
+    padding: 30px;
+    border-radius: var(--radius);
+    background: linear-gradient(145deg, #e3f7f6, #f4fbf9);
+    border: 1px solid #cbece8;
+}
+
+.highlight-icon {
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 12px;
+}
+
+.about-highlight h3 {
+    margin-bottom: 10px;
+}
+
+.technology-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 20px;
+}
+
+.technology-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 25px;
+    box-shadow: var(--shadow);
+}
+
+.technology-card h3 {
+    color: var(--primary);
+    margin-bottom: 10px;
+}
+
+.limitations-list {
+    padding-left: 22px;
+    margin-top: 15px;
+}
+
+.limitations-list li {
+    color: var(--muted);
+    padding: 5px 0;
+}
+
+
+/* 19. NOTICE CARD */
+
+.notice-card {
+    background: #fff8e5;
+    border: 1px solid #f1dfaa;
+    border-radius: var(--radius);
+    padding: 25px;
+    margin-top: 35px;
+}
+
+.notice-card h3 {
+    color: #765300;
+    margin-bottom: 10px;
+}
+
+.notice-card p,
+.notice-card li {
+    color: #6c5a32;
+}
+
+
+/* 20. FOOTER */
+
+.site-footer {
+    background: #102f3b;
+    color: #ffffff;
+    padding-top: 40px;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 35px;
+    padding-bottom: 30px;
+}
+
+.footer-content > div:first-child {
+    max-width: 470px;
+}
+
+.footer-logo {
+    color: #ffffff;
+}
+
+.footer-content p {
+    color: #c1d1d8;
+    margin-top: 10px;
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    align-items: flex-start;
+    gap: 17px;
+    flex-wrap: wrap;
+}
+
+.footer-links a {
+    color: #d4e3e9;
+    font-size: 0.9rem;
+}
+
+.footer-links a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.12);
+    padding: 18px 4%;
+    text-align: center;
+}
+
+.footer-bottom p {
+    color: #b7cbd3;
+    font-size: 0.8rem;
+    margin: 4px 0;
+}
+
+
+/* 21. HELPER CLASSES */
+
+.text-success {
+    color: var(--success);
+}
+
+.text-warning {
+    color: var(--warning);
+}
+
+.text-danger {
+    color: var(--danger);
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* 22. TABLET RESPONSIVENESS */
+
+@media (max-width: 950px) {
+
+    .header-content {
+        padding: 15px 0;
+        align-items: center;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .navbar {
+        justify-content: center;
+    }
+
+    .hero > .container.hero-content {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 0.9fr);
+        gap: 25px;
+    }
+
+    .hero-text h1 {
+        font-size: clamp(2rem, 4vw, 2.8rem);
+    }
+
+    .hero-visual {
+        min-height: 320px;
+        padding: 20px;
+    }
+
+    .water-circle {
+        width: 160px;
+        min-height: 160px;
+    }
+
+    .floating-card-one {
+        top: 15px;
+        left: 10px;
+    }
+
+    .floating-card-two {
+        right: 10px;
+        bottom: 15px;
+    }
+
+    .summary-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .parameter-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .dashboard-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .feature-grid,
+    .process-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .about-intro {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* 23. MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+
+    .container {
+        width: 92%;
+    }
+
+    .header-content {
+        align-items: center;
+    }
+
+    .navbar {
+        justify-content: center;
+        gap: 4px;
+    }
+
+    .navbar a {
+        font-size: 0.8rem;
+        padding: 7px 8px;
+    }
+
+    .simulation-notice {
+        font-size: 0.76rem;
+    }
+
+    .hero {
+        padding: 40px 0;
+    }
+
+    .hero > .container.hero-content {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    .hero-text h1 {
+        font-size: 2.25rem;
+    }
+
+    .hero-description {
+        font-size: 0.95rem;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .hero-buttons .btn {
+        width: 100%;
+    }
+
+    .hero-visual {
+        min-height: 300px;
+        padding: 20px;
+    }
+
+    .water-circle {
+        width: 155px;
+        min-height: 155px;
+        padding: 15px;
+    }
+
+    .water-icon {
+        font-size: 2.2rem;
+    }
+
+    .water-circle h2 {
+        font-size: 1rem;
+    }
+
+    .water-circle p {
+        font-size: 0.75rem;
+    }
+
+    .floating-card {
+        padding: 9px;
+        gap: 6px;
+    }
+
+    .floating-card > span {
+        font-size: 1.2rem;
+    }
+
+    .floating-card strong {
+        font-size: 0.72rem;
+    }
+
+    .floating-card small {
+        font-size: 0.67rem;
+    }
+
+    .section {
+        margin-top: 45px;
+    }
+
+    .feature-grid,
+    .parameter-grid,
+    .process-grid,
+    .technology-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .parameters-section {
+        padding: 45px 0;
+    }
+
+    .page-content {
+        padding-top: 30px;
+        padding-bottom: 45px;
+    }
+
+    .page-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .page-heading > .btn {
+        width: 100%;
+    }
+
+    .metric-card {
+        padding: 18px;
+    }
+
+    .dashboard-panel {
+        padding: 19px;
+    }
+
+    .alert-card {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .alert-title-row {
+        flex-direction: column;
+    }
+
+    .cta-section {
+        padding: 30px 20px;
+    }
+
+    .cta-content {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-links {
+        gap: 15px;
+    }
+}
+
